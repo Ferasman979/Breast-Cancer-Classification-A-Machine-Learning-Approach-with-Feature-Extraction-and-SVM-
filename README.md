@@ -1,18 +1,30 @@
-**Project Title:** Breast Cancer Classification: A Machine Learning Approach with Feature Extraction and SVM
 
-**Project Description:**
+---
 
-In this project, we develop an advanced machine learning model to enhance the accuracy of breast cancer diagnosis through image analysis. Breast cancer, a prevalent concern worldwide, particularly affects women and demands timely detection for effective treatment outcomes. Our approach utilizes a set of sophisticated techniques encompassing image preprocessing, feature extraction, feature selection, and classification using Support Vector Machine (SVM) to distinguish between benign and malignant breast tissue images.
+## Breast Cancer Classification Using SVM and MLP
 
-**Key Components:**
-1. **Data Acquisition and Preprocessing:** We utilized a dataset comprising 31 benign and 30 malignant breast tissue images. These images underwent preprocessing steps like grayscale conversion and Gaussian blur to enhance feature extraction accuracy using OpenCV.
+### Project Overview
+This repository hosts two separate but related projects aimed at classifying breast cancer as benign or malignant using different machine learning models. The first project employs Support Vector Machine (SVM) techniques combined with feature extraction methods to classify histopathological images of breast tissues. The second project uses a Multilayer Perceptron (MLP), an artificial neural network, to analyze and classify breast cancer from X-ray images. Both projects emphasize feature selection, preprocessing, model training, and evaluation to achieve high classification accuracy.
 
-2. **Feature Extraction and Selection:** The project extracts critical shape and texture features from the images. Techniques such as contours for shape and Gray Level Co-occurrence Matrix (GLCM) for texture provided detailed attributes like area, perimeter, contrast, and dissimilarity. Subsequently, the most informative features were selected using Recursive Feature Elimination (RFE) with an SVM classifier to optimize the predictive model's accuracy and efficiency.
+### SVM Classification Approach
+- **Data Processing**: Images were preprocessed using grayscale conversion and Gaussian blur to enhance feature extraction.
+- **Feature Extraction**: Utilized shape and texture information, calculating metrics such as area, perimeter, and texture contrasts.
+- **Feature Selection**: Recursive Feature Elimination (RFE) with an SVM was used to identify the most predictive features.
+- **Normalization and Evaluation**: Features were normalized using Min-Max scaling. The model's performance was evaluated using confusion matrices and classification reports.
 
-3. **Normalization and Model Training:** All features were normalized using Min-Max scaling to ensure uniformity in scale across different features, crucial for the effective performance of SVM. The model training involved a linear SVM classifier, focusing on the four most relevant features identified by RFE.
+### MLP Classification Approach
+- **Data Collection and Preprocessing**: Features were extracted from X-ray images and labeled as malignant or benign.
+- **Feature Selection**: Used chi-squared tests within the SelectKBest method to determine the most relevant features.
+- **Normalization and Model Building**: Applied Min-Max scaling. The MLP model included multiple layers with configurations optimized through hyperparameter tuning.
+- **Results and Evaluation**: Performance was measured using precision, recall, and F1-score metrics detailed in a comprehensive evaluation section.
 
-4. **Evaluation and Insights:** Our evaluation strategy included the use of a confusion matrix and a classification report, providing a detailed insight into the model's precision, recall, F1-score, and accuracy, which achieved a high mark of 97%. The visualizations such as pair plots and box plots helped in understanding the distribution and relationships of the features, supporting the robustness of our feature selection.
+### Common Goals
+Both projects aim to:
+- Improve the accuracy and reliability of breast cancer diagnosis.
+- Provide detailed analyses of model performances.
+- Offer insights into the importance of specific features in breast cancer diagnosis.
 
-5. **Conclusion:** The project successfully demonstrates the capability of machine learning techniques in the precise classification of breast cancer, highlighting the potential of SVM and RFE in medical image analysis. The selected features—energy, correlation, contrast, and dissimilarity—proved essential in distinguishing between benign and malignant cases, thereby reinforcing the model's reliability for clinical application.
-
-This project not only contributes to the technological advancements in medical diagnostics but also sets a foundation for future research to explore more sophisticated algorithms and larger datasets to further enhance diagnostic accuracy for breast cancer and potentially other diseases.
+### Technologies Used
+- Python
+- Libraries: OpenCV, SciKit-Learn, Pandas, NumPy
+- Machine Learning Models: SVM, MLP
